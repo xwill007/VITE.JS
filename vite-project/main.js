@@ -27,7 +27,8 @@ document.querySelector('#app').innerHTML = `
       Click on the Vite logo to learn more
     </p>
 
-    <pre>${JSON.stringify(data)}</pre>
+    <pre>${JSON.stringify(data.user)}</pre>
+    <pre>${JSON.stringify(data.session)}</pre>
 
   </div>
 `

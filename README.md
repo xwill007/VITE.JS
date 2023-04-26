@@ -16,3 +16,5 @@ npm run dev o yarn dev --> obtener direccion para ver el proyecto
 
 1. Se crean carpetas ejemplo.sass y demo.less vinculadas en base.css y esta vienculada en style.css
 2. Mostrar datos de json con <pre>${JSON.stringify(data)}</pre>
+
+3.npm run build , crea carpeta dist con los archivos de produccion optimizados
