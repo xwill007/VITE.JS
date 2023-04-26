@@ -1,0 +1,6 @@
+@import "./ejemplo.sass";
+@import "./demo.less";
+
+body{
+    background-color: rgb(49, 11, 240);
+}
