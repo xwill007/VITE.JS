@@ -3,6 +3,8 @@ import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
 
+import buttonStyles from './button.module.css'
+
 document.querySelector('#app').innerHTML = `
   <div>
   
@@ -26,5 +28,6 @@ document.querySelector('#app').innerHTML = `
 
   </div>
 `
+document.getElementById('counter').className = buttonStyles.btn;
 
 setupCounter(document.querySelector('#counter'))

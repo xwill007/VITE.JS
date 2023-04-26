@@ -13,3 +13,5 @@ npm create vite@latest o yarn create vite
 cd vite-project
 npm install o yarn
 npm run dev o yarn dev --> obtener direccion para ver el proyecto
+
+1. Se crean carpetas ejemplo.sass y demo.less vinculadas en base.css y esta vienculada en style.css
