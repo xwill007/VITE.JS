@@ -1,0 +1,6 @@
+1. npm init -y
+2. npm install vite --save-dev
+3. npm install @vitejs/plugin-react --save-dev
+4. npm install react-dom aframe --save
+5. npm install aframe-react
+6. npm install three
