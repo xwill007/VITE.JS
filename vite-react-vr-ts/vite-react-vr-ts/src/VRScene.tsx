@@ -2,7 +2,6 @@ import React from 'react';
 import { Entity, Scene } from 'aframe-react';
 import myImage from './assets/clouds.jpg';
 import 'aframe';
-import VrPlane from './VrPlane';
 import LogoReact from './LogoReact';
 
 const VrScene: React.FC = () => {

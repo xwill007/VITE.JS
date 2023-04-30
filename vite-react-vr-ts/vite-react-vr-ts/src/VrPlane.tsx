@@ -1,12 +1,6 @@
-
-
 import 'aframe';
-import { Entity, Scene, Sky, Text } from 'aframe-react';
-import React, { useEffect, useRef } from 'react';
+import { Entity, Scene } from 'aframe-react';
 import myImage from './assets/clouds.jpg';
-
-
-
 
 const VrPlane = (): JSX.Element => {
   return (
