@@ -16,7 +16,8 @@ return(
 
     <Entity id="sky"
         primitive="a-sky" 
-        radius="100"
+        radius="500"
+        rotation='90 180 45'
         src="https://cdn.glitch.global/e20d5feb-5412-4c47-9272-48e617a890ee/nebulosa.jpg?v=1650590978196" 
     />
 
