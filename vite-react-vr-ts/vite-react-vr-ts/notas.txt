@@ -14,3 +14,6 @@ npm install react react-dom vite @vitejs/plugin-react-refresh aframe
 
 5. npm install aframe-react
 6. npm install three
+
+//ver pagina web 
+npm install aframe aframe-html-shader aframe-proxy-component
