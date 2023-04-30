@@ -34,21 +34,24 @@ import ReactDOM from 'react-dom';
 import { useState } from 'react'
 import './App.css'
 import LogoReact from './LogoReact';
-import VRScene from './VRScene';
+import VrPlane from './VrPlane';
+import VrScene from './VrScene';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-   
-        <div id="vr">
-          <VRScene></VRScene>
+       <div id="texto">
+          <h1>...MULTIVERSO...</h1>
         </div> 
 
-        <div id="vr">
-          <LogoReact></LogoReact>
+        <div id="vrS">
+          <VrScene/>
+          <LogoReact/>
         </div> 
+
+
 
     </>
   )

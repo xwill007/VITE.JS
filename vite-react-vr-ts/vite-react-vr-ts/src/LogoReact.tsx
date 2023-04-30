@@ -7,7 +7,12 @@ const LogoReact: React.FC = () => {
       <div>
         <a/>
         <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+          <img 
+            src={reactLogo} 
+            className="logo react" 
+            alt="React logo" 
+            width={40}
+          />
         </a>
       </div>
     </>  

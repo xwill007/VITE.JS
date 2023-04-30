@@ -1,38 +1,40 @@
-
+import React from 'react';
+import { Entity, Scene } from 'aframe-react';
+import myImage from './assets/clouds.jpg';
 import 'aframe';
-import { Entity, Scene, Sky, Text } from 'aframe-react';
+import VrPlane from './VrPlane';
+import LogoReact from './LogoReact';
 
-import React, { useEffect, useRef } from 'react';
-import html2canvas from 'html2canvas';
+const VrScene: React.FC = () => {
+return(
+    <Scene> 
 
-const VRScene: React.FC = () => {
-  const planeRef = useRef(null);
+    <Entity primitive="a-camera">
+        <LogoReact/>
+        <Entity primitive="a-cursor" />
+    </Entity>
 
-  useEffect(() => {
+    <Entity id="sky"
+        primitive="a-sky" 
+        radius="100"
+        src="https://cdn.glitch.global/e20d5feb-5412-4c47-9272-48e617a890ee/nebulosa.jpg?v=1650590978196" 
+    />
 
-    html2canvas(document.querySelector('#page')).then((canvas) => {
-        const dataURL = canvas.toDataURL();
-        // Asignar la imagen al material del plano
-        planeRef.current.setAttribute('material', { src: dataURL });
-      });
+    <Entity id="plane"
+        geometry={{ primitive: 'plane', width: 3 , height: 2 }}
+        position={{ x: 0, y: 2, z: -3 }}
+        material={{ src: `url(${myImage})` }}
+    />
 
+
+
+   
+   
+
+    </Scene>
     
-  }, []);
+    
 
-  return (
-    <>
-      <div>
-        <h1>"vr"</h1>
-        <Scene>
-          <Entity id="page"
-            geometry={{ primitive: 'plane', width: 6, height: 4 }}
-            position={{ x: 0, y: 2, z: -3 }}
-            material={{ planeRef }}
-          />
-        </Scene>
-      </div>
-    </>
-  );
-};
-
-export default VRScene;
+    );
+}
+export default VrScene;
