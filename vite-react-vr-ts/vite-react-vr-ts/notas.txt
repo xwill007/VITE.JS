@@ -1,0 +1,16 @@
+///////////////////////////////////////////////////////////////////////////////////////////////
+////////                                   vite-react-vr-ts                           ////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+1)npm create vite@latest
+name: vite-react-vr-ts
+framework: React
+variant: TypeScript + SWC
+cd vite-react-vr-ts
+npm install
+npm run dev
+
+npm install react-dom aframe --save
+npm install react react-dom vite @vitejs/plugin-react-refresh aframe
+
+5. npm install aframe-react
+6. npm install three
