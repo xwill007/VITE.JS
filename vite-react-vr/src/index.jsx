@@ -1,22 +1,21 @@
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import 'aframe';
-import { Entity, Scene } from 'aframe-react';
+//import ReactDOM from 'react-dom';
+import VrScene from './vrScene';
+import { createRoot } from 'react-dom/client';
 
 function App() {
   return (
-    <Scene>
-      <Entity geometry={{primitive: 'box'}} material={{color: 'red'}} position={{x: 0, y: 1, z: -3}} />
-    </Scene>
+    <VrScene></VrScene>
   );
 }
 
-const root = document.getElementById('root');
 
+//ReactDOM.render(<App/>, document.getElementById('root'));
 // En lugar de ReactDOM.render
-const rootElement = ReactDOM.createRoot(root);
-rootElement.render(<App />);
+const root = document.getElementById('root');
+const rootElement = createRoot(root);
+rootElement.render(<App/>);
 
 
 
