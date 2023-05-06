@@ -5,3 +5,6 @@
 4. npm install react-dom aframe --save
 5. npm install aframe-react
 6. npm install three
+
+
+<ctrl> + <alt> + i //inspector
