@@ -62,6 +62,8 @@ const VrScene: React.FC = () => {
         rotation={{ x: 0, y: 210, z: 0 }}
       />
 
+      
+
     </Scene>
   );
 };
