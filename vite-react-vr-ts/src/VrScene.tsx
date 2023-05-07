@@ -57,9 +57,10 @@ const VrScene: React.FC = () => {
         id='curve'
         geometry="primitive: cylinder; radius: 8; height: 8; openEnded: true; thetaLength: 300;"  
         //geometry={{ primitive: 'cylinder', radius: 3, height: 3, openEnded: true, 'theta-length': 290 }}
-        material={{ src: `url(${myImage})`, side: 'double' }}
+        material={{ src: `url(${myImage})`, side: 'double', opacity:'0.5' }}
         position={{ x: 0, y: 4, z: 0 }}
         rotation={{ x: 0, y: 210, z: 0 }}
+        
       />
 
       
