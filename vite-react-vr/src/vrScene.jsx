@@ -18,16 +18,25 @@ function VrScene(){
         />
       </a-assets>
 
-      <a-camara>
-        <a-cursor>
-        </a-cursor>
-      </a-camara>
+      <a-entity id="camera1"
+        position="2 0 0"  //no cambia
+        color ="black"
+        >
+        <a-camara   
+          user-height="1.0"  //no cambia
+          active="false"
+          >
+          <a-cursor>
+          </a-cursor>
+        </a-camara>
+      </a-entity>
 
       <a-entity id="ui" position="0 2.1 -2.5">
         <a-entity id = "plano">
           <a-image 
             scale="1 1 0" 
-            src= "#img" //src= {Meet}
+            src= "#img" 
+            color="yellow"
           />
         </a-entity >
         <a-entity id ="music-frame">
@@ -40,12 +49,17 @@ function VrScene(){
         color="blue"
         src= "#img"
         opacity ="0.5"
-      ></a-box>
+      >
+        <a-camara   
+          active="true" // no actiav la camara en el objeto
+          >
+        </a-camara>
+      </a-box>
 
       <a-sphere 
         position="0 1.25 -5" 
         radius="1.25" 
-        color="#EF2D5E" 
+        color="red" 
         src ="#vid"
       ></a-sphere>
       
