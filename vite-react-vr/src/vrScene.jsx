@@ -1,46 +1,53 @@
 import React from 'react';
 import 'aframe';
 import Cloud from './clouds.jpg';
+import Meet from './Meet.mp4';
 
 
 function VrScene(){
     return(
     <a-scene>
-
       <a-assets>
-
+        <img id='img' src={Cloud}/>
+        <video id='vid' src={Meet}/>
         <a-mixin
          id="frame"
-         geometry="primitive: plane; height: 2; width: 2"
+         geometry="primitive: plane; height: 4; width: 2"
          material="transparent:true"
          src= {Cloud}
         />
-
       </a-assets>
 
+      <a-camara>
+        <a-cursor>
+        </a-cursor>
+      </a-camara>
+
       <a-entity id="ui" position="0 2.1 -2.5">
-
-        <a-entity id = "logo">
+        <a-entity id = "plano">
           <a-image 
-            scale="0.5 0.5 0" 
-            src= {Cloud}
-            />
+            scale="1 1 0" 
+            src= "#img" //src= {Meet}
+          />
         </a-entity >
-
         <a-entity id ="music-frame">
         </a-entity>
-
       </a-entity>
 
       <a-box 
         position="-1 0.5 -3" 
         rotation="0 45 0" 
         color="blue"
-        src= {Cloud}
+        src= "#img"
         opacity ="0.5"
       ></a-box>
 
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"  ></a-sphere>
+      <a-sphere 
+        position="0 1.25 -5" 
+        radius="1.25" 
+        color="#EF2D5E" 
+        src ="#vid"
+      ></a-sphere>
       
       <a-cylinder 
         position="1 0.75 -3" 
@@ -49,7 +56,7 @@ function VrScene(){
         color="blue"
         side='double'
         opacity ="0.8"
-
+      
         openEnded= 'true' //no funciona
         thetaLength= '300'  //no finciona
       ></a-cylinder>
