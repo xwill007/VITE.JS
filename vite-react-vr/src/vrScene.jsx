@@ -63,7 +63,7 @@ function VrScene(){
         src ="#vid"
       ></a-sphere>
       
-      <a-cylinder 
+      <a-curvedimage 
         position="1 0.75 -3" 
         radius="10" 
         height="10" 
@@ -73,7 +73,7 @@ function VrScene(){
       
         openEnded= 'true' //no funciona
         thetaLength= '300'  //no finciona
-      ></a-cylinder>
+      ></a-curvedimage>
       
       <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" transparent="true" opacity="1.0" mixin="frame"
       ></a-plane>
