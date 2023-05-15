@@ -6,10 +6,10 @@ import { Entity, Scene } from "aframe-react";
 import React from "react";
 import ReactDOM from "react-dom";
 import "aframe-video-controls";
-import teclab_a from './img/a.png'
-import teclab_b from './img/b.png'
-import teclab_c from './img/c.png'
-import teclab_d from './img/d.png'
+import teclab_a from "./img/a.png";
+import teclab_b from "./img/b.png";
+import teclab_c from "./img/c.png";
+import teclab_d from "./img/d.png";
 
 var rCilindro = 8;
 
@@ -56,23 +56,10 @@ class App extends React.Component {
             src="https://cdn.glitch.me/e20d5feb-5412-4c47-9272-48e617a890ee/Get%20You%20The%20Moon%20InEs.mp4?v=1650570720919"
             type="video/mp4"
           ></video>
-          <img
-            id="img1"
-            src={teclab_a}
-            rotation="0 0 0"
-          />\
-          <img
-            id="img2"
-            src={teclab_b}
-          />\
-          <img
-            id="img3"
-            src={teclab_c}
-          />
-          <img
-            id="img4"
-            src={teclab_d}
-          />
+          <img id="img1" src={teclab_a} rotation="0 0 0" />\
+          <img id="img2" src={teclab_b} />\
+          <img id="img3" src={teclab_c} />
+          <img id="img4" src={teclab_d} />
         </a-assets>
         <Entity
           primitive="a-plane"
@@ -104,7 +91,9 @@ class App extends React.Component {
         <Entity
           id="box"
           geometry={{ primitive: "box" }}
+          position={{ x: 3, y: 1, z: -3 }}
           material={{ color: this.state.color, opacity: 0.1 }}
+          events={{ click: this.changeColor.bind(this) }}
           animation__rotate={{
             property: "rotation",
             dur: 6000,
@@ -118,8 +107,6 @@ class App extends React.Component {
             loop: true,
             to: "2.0 2.0 2.0",
           }}
-          position={{ x: 4, y: 1, z: -3 }}
-          events={{ click: this.changeColor.bind(this) }}
         >
           <Entity
             id="miniBox"
@@ -134,7 +121,7 @@ class App extends React.Component {
             material={{ color: "black" }}
           />
         </Entity>
-        <Entity primitive="a-camera">
+        <Entity primitive="a-camera" position="0 2.5 0">
           <Entity
             primitive="a-cursor"
             animation__click={{
@@ -146,13 +133,108 @@ class App extends React.Component {
             }}
           />
         </Entity>
-        <Entity id="curve" geometry="primitive: cylinder; radius: 8; height: 8; openEnded: true; thetaLength: 300;" material={{color: this.state.color, side: "double", opacity: "0.05", }} position={{ x: 0, y: 4, z: 0 }} rotation={{ x: 0, y: 0, z: 0 }} >
-          <Entity id="video1" position={{ x: 0, y: 0, z: 0.1 }} rotation={{ x: 0, y: 0, z: 0 }} geometry={{ primitive: "cylinder", height: 8, width: 5, radius: 8, openEnded: true, thetaLength: 89, }} material={{ color: "white", shader: "flat", src: "#img1", autoPlay: false, opacity: 0.9, side: "double", rotation:"0 180 0", scale:"1 -1 1"  }} />
-          <Entity id="video2" position={{ x: 0, y: 0, z: 0.1 }} rotation={{ x: 0, y: 90, z: 0 }} geometry={{primitive: "cylinder", height: 8, width: 5, radius: 8, openEnded: true, thetaLength: 89, }} material={{ color: "white", shader: "flat", src: "#img2", autoPlay: false, opacity: 0.9, side: "back", }} />
-          <Entity id="video3" position={{ x: 0, y: 0, z: 0.1 }} rotation={{ x: 0, y: 180, z: 0 }} geometry={{primitive: "cylinder", height: 8, width: 5, radius: 8, openEnded: true, thetaLength: 89, }} material={{color: "white", shader: "flat", src: "#img3", autoPlay: false, opacity: 0.9, side: "back", }} />
-          <Entity id="video4" position={{ x: 0, y: 0, z: 0.1 }} rotation={{ x: 0, y: 270, z: 0 }} geometry={{primitive: "cylinder", height: 8, width: 5, radius: 8, openEnded: true, thetaLength: 89, }} material={{color: "white", shader: "flat", src: "#img4", autoPlay: false, opacity: 0.9, side: "back", }} />
-        </Entity>//curve
-        
+        <Entity
+          id="curve"
+          geometry="primitive: cylinder; radius: 8; height: 9; openEnded: true; thetaLength: 300;"
+          material={{
+            color: this.state.color,
+            side: "double",
+            opacity: "0.05",
+          }}
+          position={{ x: 0, y: 4, z: 0 }}
+          rotation={{ x: 0, y: 0, z: 0 }}
+        >
+          <Entity
+            id="video1"
+            position={{ x: 0, y: 0, z: 0.1 }}
+            rotation={{ x: 0, y: 0, z: 0 }}
+            geometry={{
+              primitive: "cylinder",
+              height: 8,
+              width: 5,
+              radius: 5,
+              openEnded: true,
+              thetaLength: 89,
+            }}
+            material={{
+              color: "white",
+              shader: "flat",
+              src: "#img1",
+              autoPlay: false,
+              opacity: 0.9,
+              side: "double",
+              repeat: "-1 1",
+            }}
+          />
+          <Entity
+            id="video2"
+            position={{ x: 0, y: 0, z: 0.1 }}
+            rotation={{ x: 0, y: 90, z: 0 }}
+            geometry={{
+              primitive: "cylinder",
+              height: 8,
+              width: 5,
+              radius: 5,
+              openEnded: true,
+              thetaLength: 89,
+            }}
+            material={{
+              color: "white",
+              shader: "flat",
+              src: "#img2",
+              autoPlay: false,
+              opacity: 0.9,
+              side: "double",
+              repeat: "-1 1",
+            }}
+          />
+          <Entity
+            id="video3"
+            position={{ x: 0, y: 0, z: 0.1 }}
+            rotation={{ x: 0, y: 180, z: 0 }}
+            geometry={{
+              primitive: "cylinder",
+              height: 8,
+              width: 5,
+              radius: 5,
+              openEnded: true,
+              thetaLength: 89,
+            }}
+            material={{
+              color: "white",
+              shader: "flat",
+              src: "#img3",
+              autoPlay: false,
+              opacity: 0.9,
+              side: "double",
+              repeat: "-1 1",
+            }}
+          />
+          <Entity
+            id="video4"
+            position={{ x: 0, y: 0, z: 0.1 }}
+            rotation={{ x: 0, y: 270, z: 0 }}
+            geometry={{
+              primitive: "cylinder",
+              height: 8,
+              width: 5,
+              radius: 5,
+              openEnded: true,
+              thetaLength: 89,
+            }}
+            material={{
+              color: "white",
+              shader: "flat",
+              src: "#img4",
+              autoPlay: false,
+              opacity: 0.9,
+              side: "double",
+              repeat: "-1 1",
+            }}
+          />
+          curve
+        </Entity>
+        //curve
       </Scene>
     );
   }
