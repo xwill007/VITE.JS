@@ -91,7 +91,7 @@ class App extends React.Component {
         <Entity
           id="box"
           geometry={{ primitive: "box" }}
-          position={{ x: 3, y: 1, z: -3 }}
+          position={{ x: 3, y: 1, z: -1 }}
           material={{ color: this.state.color, opacity: 0.1 }}
           events={{ click: this.changeColor.bind(this) }}
           animation__rotate={{
@@ -139,7 +139,7 @@ class App extends React.Component {
           material={{
             color: this.state.color,
             side: "double",
-            opacity: "0.05",
+            opacity: "0.1",
           }}
           position={{ x: 0, y: 4, z: 0 }}
           rotation={{ x: 0, y: 0, z: 0 }}
@@ -232,9 +232,7 @@ class App extends React.Component {
               repeat: "-1 1",
             }}
           />
-          curve
         </Entity>
-        //curve
       </Scene>
     );
   }
