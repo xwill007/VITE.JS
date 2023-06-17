@@ -30,7 +30,7 @@ function App() {
       });
   }, []);
 
-  function renderStereoScene() {
+  const renderStereoScene = () => {
     const ctx = canvasRef.current.getContext("2d");
 
     // Configura el tamaño del canvas para mostrar ambas imágenes una al lado de la otra
@@ -75,7 +75,7 @@ function App() {
 
     // Llama a la función de renderizado estereoscópico nuevamente en el siguiente cuadro de animación
     window.requestAnimationFrame(renderStereoScene);
-  }
+  };
 
   useEffect(() => {
     const startCamera = async () => {
